@@ -13,7 +13,7 @@ namespace Project.Business.Abstract
         void Add(Product product);
         void Update(Product product);
 
-        void Delete(int productId);
+        void Delete(int productId);//geri gelcem
 
 
     }

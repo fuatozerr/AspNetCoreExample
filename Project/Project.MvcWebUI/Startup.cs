@@ -6,6 +6,10 @@ using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.DependencyInjection;
+using Project.Business.Abstract;
+using Project.Business.Concreate;
+using Project.DataAccess.Abstract;
+using Project.DataAccess.Concreate.EntityFramework;
 
 namespace Project.MvcWebUI
 {
@@ -15,7 +19,10 @@ namespace Project.MvcWebUI
         // For more information on how to configure your application, visit https://go.microsoft.com/fwlink/?LinkID=398940
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddScoped<IProductService, ProductManager>();
+            services.AddScoped<IProductDal, EfProductDal>();
             services.AddMvc();
+
 
         }
 
@@ -28,6 +35,7 @@ namespace Project.MvcWebUI
             }
 
             app.UseMvcWithDefaultRoute();
+
         }
     }
 }

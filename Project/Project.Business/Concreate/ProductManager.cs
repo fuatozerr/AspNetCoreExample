@@ -20,9 +20,9 @@ namespace Project.Business.Concreate
             _productDal.Add(product);
         }
 
-        public void Delete(int productId)
+        public void Delete(int productId)//geri gelcem
         {
-            _productDal.Delete(productId);
+            _productDal.Delete(new Product { ProductId=productId});
         }
 
         public List<Product> GetAll()
