@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Project.Business.Abstract;
+using Project.MvcWebUI.Models;
 
 namespace Project.MvcWebUI.Controllers
 {
@@ -18,7 +19,14 @@ namespace Project.MvcWebUI.Controllers
 
         public ActionResult Index()
         {
-            return View();
+            var products=_productService.GetAll();
+            ProductListViewModel model = new ProductListViewModel()
+            {
+                Products = products
+               
+            };
+
+            return View(model);
         }
     }
 }

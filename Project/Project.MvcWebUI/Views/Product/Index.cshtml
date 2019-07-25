@@ -1,7 +1,28 @@
-﻿
-@{
-    ViewData["Title"] = "Index";
-}
+﻿@model Project.MvcWebUI.Models.ProductListViewModel
+
 
 <h1>Index</h1>
 
+
+<div>
+
+    <table>
+        <tr>
+            <td>Product Name</td>
+            <td>Unit Price</td>
+            <td>Units In Stock</td>
+        </tr>
+
+
+
+
+        @foreach (var product in Model.Products)
+        {
+            <tr>
+            <td>@product.ProductName</td>
+            <td>@product.UnitPrice</td>
+            <td>@product.UnitsInStock</td>
+            </tr>
+        }
+    </table>
+</div>
