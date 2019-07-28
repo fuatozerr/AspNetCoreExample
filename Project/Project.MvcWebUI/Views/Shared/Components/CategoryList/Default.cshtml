@@ -1,0 +1,12 @@
+﻿@model Project.MvcWebUI.Models.CategoryListViewModel
+
+@{
+    ViewData["Title"] = "View";
+}
+    <div class="list-group">
+        @foreach (var category in Model.categories)
+        {
+           <a href="#" class="list-group-item"> @category.CategoryName</a>
+
+        }
+        </div>
