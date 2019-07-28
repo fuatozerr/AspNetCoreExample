@@ -10,6 +10,7 @@ using Project.Business.Abstract;
 using Project.Business.Concreate;
 using Project.DataAccess.Abstract;
 using Project.DataAccess.Concreate.EntityFramework;
+using Project.MvcWebUI.Middlewares;
 
 namespace Project.MvcWebUI
 {
@@ -33,7 +34,8 @@ namespace Project.MvcWebUI
             {
                 app.UseDeveloperExceptionPage();
             }
-
+            app.UseStaticFiles();
+            app.UseNodeModules(env.ContentRootPath);
             app.UseMvcWithDefaultRoute();
 
         }

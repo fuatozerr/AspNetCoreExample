@@ -5,13 +5,13 @@ VisualStudioVersion = 16.0.29102.190
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Project.Core", "Project.Core\Project.Core.csproj", "{F23F49C3-E799-4C46-8861-B3F2E2419A98}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Project.Northwind.Entities", "Project.Northwind.Entities\Project.Northwind.Entities.csproj", "{34EB6BBB-8D11-4A87-A152-FF8BA8A3664F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Project.Northwind.Entities", "Project.Northwind.Entities\Project.Northwind.Entities.csproj", "{34EB6BBB-8D11-4A87-A152-FF8BA8A3664F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Project.DataAccess", "Project.DataAccess\Project.DataAccess.csproj", "{455CB948-FC6B-4127-A05E-B18FAF95D527}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Project.DataAccess", "Project.DataAccess\Project.DataAccess.csproj", "{455CB948-FC6B-4127-A05E-B18FAF95D527}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Project.Business", "Project.Business\Project.Business.csproj", "{A6787C23-711B-459B-8302-8A47283B4D81}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Project.Business", "Project.Business\Project.Business.csproj", "{A6787C23-711B-459B-8302-8A47283B4D81}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Project.MvcWebUI", "Project.MvcWebUI\Project.MvcWebUI.csproj", "{40C57B34-FFB1-49FF-B59B-F06421E4BA3A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Project.MvcWebUI", "Project.MvcWebUI\Project.MvcWebUI.csproj", "{40C57B34-FFB1-49FF-B59B-F06421E4BA3A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
