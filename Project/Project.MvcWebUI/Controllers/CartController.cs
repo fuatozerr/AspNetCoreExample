@@ -6,6 +6,7 @@ using Microsoft.AspNetCore.Mvc;
 using Project.Business.Abstract;
 using Project.MvcWebUI.Models;
 using Project.MvcWebUI.Services;
+using Project.Northwind.Entities.Concreate;
 
 namespace Project.MvcWebUI.Controllers
 {
@@ -52,6 +53,28 @@ namespace Project.MvcWebUI.Controllers
             TempData.Add("message", String.Format("Your product,was successfuly removed to car!"));
 
             return RedirectToAction("List");
+        }
+
+        public ActionResult Complete()
+        {
+            var shippingDetailsViewModel = new ShippingDetailsViewModel
+            {
+                ShippingDetails = new ShippingDetails()
+            };
+
+            return View(shippingDetailsViewModel);
+        }
+
+        [HttpPost]
+        public ActionResult Complete(ShippingDetails shippingDetails)
+        {
+            if(!ModelState.IsValid)
+            {
+                return View();
+            }
+            TempData.Add("message",string.Format( "Thank you {0}, order is in process", shippingDetails.FirstName));
+
+            return View();
         }
     }
 }
