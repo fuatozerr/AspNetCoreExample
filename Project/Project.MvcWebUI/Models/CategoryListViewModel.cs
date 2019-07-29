@@ -9,5 +9,7 @@ namespace Project.MvcWebUI.Models
     public class CategoryListViewModel
     {
         public List<Category> categories;
+
+        public int CurrentCategory;
     }
 }
