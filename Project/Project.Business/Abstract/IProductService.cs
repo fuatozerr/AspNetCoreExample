@@ -14,7 +14,6 @@ namespace Project.Business.Abstract
         void Update(Product product);
 
         void Delete(int productId);//geri gelcem
-
-
+        Product GetById(int productId);
     }
 }

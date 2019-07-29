@@ -11,6 +11,7 @@ using Project.Business.Concreate;
 using Project.DataAccess.Abstract;
 using Project.DataAccess.Concreate.EntityFramework;
 using Project.MvcWebUI.Middlewares;
+using Project.MvcWebUI.Services;
 
 namespace Project.MvcWebUI
 {
@@ -24,6 +25,11 @@ namespace Project.MvcWebUI
             services.AddScoped<IProductDal, EfProductDal>();
             services.AddScoped<ICategoryService, CategoryManager>();
             services.AddScoped<ICategoryDal, EfCategoryDal>();
+            services.AddSingleton<ICartSessionService, CartSessionService>();
+            services.AddSingleton<ICartService, CartManager>();
+            services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
+            services.AddSession();
+            services.AddDistributedMemoryCache();
             services.AddMvc();
 
 
@@ -38,6 +44,7 @@ namespace Project.MvcWebUI
             }
             app.UseStaticFiles();
             app.UseNodeModules(env.ContentRootPath);
+            app.UseSession();
             app.UseMvcWithDefaultRoute();
 
         }
