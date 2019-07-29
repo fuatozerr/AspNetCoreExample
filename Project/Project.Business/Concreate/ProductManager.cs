@@ -32,7 +32,7 @@ namespace Project.Business.Concreate
 
         public List<Product> GetByCategory(int categoryId)
         {
-            return _productDal.GetList(x => x.CategoryId == categoryId);
+            return _productDal.GetList(x => x.CategoryId == categoryId || categoryId==0);
         }
 
         public void Update(Product product)
