@@ -52,5 +52,31 @@ namespace Project.MvcWebUI.Controllers
 
             return RedirectToAction("Insert");
         }
+
+        public ActionResult Update(int productId)
+        {
+            var product = _productService.GetById(productId);
+
+            var model = new ProductUpdateViewModel
+            {
+                Product =_productService.GetById(productId),
+                Categories=_categoryService.GetAll()
+            };
+
+            return View(model);
+        }
+
+        [HttpPost]
+        public ActionResult Update(Product product)
+        {
+            _productService.Update(product);
+            return RedirectToAction("Update");
+        }
+
+        public ActionResult Delete(int productId)
+        {
+            _productService.Delete(productId);
+          return  RedirectToAction("Index");
+        }
     }
 }
