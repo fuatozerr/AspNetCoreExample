@@ -6,6 +6,7 @@ using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Routing;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 using Project.Business.Abstract;
@@ -51,8 +52,13 @@ namespace Project.MvcWebUI
             app.UseNodeModules(env.ContentRootPath);
             app.UseIdentity();
             app.UseSession();
-            app.UseMvcWithDefaultRoute();
+            app.UseMvc(ConfigureRoutes);
 
+        }
+
+        private void ConfigureRoutes(IRouteBuilder routeBuilder)
+        {
+            routeBuilder.MapRoute("Default", "{controller=Product}/{action=Index}/{id?}");
         }
     }
 }
