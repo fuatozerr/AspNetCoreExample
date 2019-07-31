@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Project.Business.Abstract;
 using Project.MvcWebUI.Models;
@@ -9,6 +10,7 @@ using Project.Northwind.Entities.Concreate;
 
 namespace Project.MvcWebUI.Controllers
 {
+    [Authorize]
     public class AdminController : Controller
     {
         private IProductService _productService;
